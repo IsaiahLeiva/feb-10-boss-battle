@@ -1,4 +1,3 @@
-
 let bosses = {
     Mark: {
         Image: 'https://avatars.githubusercontent.com/u/20800016?v=4',
@@ -70,6 +69,7 @@ function attackHero() {
             if (damage.Health <= 0) {
                 damage.Health = 0
                 console.log("You lose")
+                reset()
             }
         }
         updateHeroHealth(name)
@@ -102,21 +102,12 @@ function attackBoss() {
     }
 }
 
-// function reset() {
-//     for (let name in bosses) {
-//         let bossHeal = bosses[name]
-//         if (bossHeal.Health <= 0) {
-//             bossHeal.Health = 100
-//         }
-//     }
-
-//     for (let name in heroes) {
-//         let heroHealth = heroes[name]
-//         if (heroHealth.Health <= 0) {
-//             heroHealth.Health = 100
-//         }
-//     }
-// }
+function reset() {
+    bosses.Mark.Health = 100
+    heroes.Mick.Health = 100
+    drawBoss()
+    drawHero()
+}
 
 
 drawHero()
